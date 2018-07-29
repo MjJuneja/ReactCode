@@ -1,0 +1,70 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs38 \cf0 React routing\
+\
+Router 4.x\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 Npm install react-router \'97save (for older version)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 Npm install react-router-dom \'97save (for 4.x)\
+\
+It support nested routing\
+\
+BrowserRouter alias name is given as Router\
+Import \{BrowserRouter as Router , Route , Link, NavLink\} from \
+\
+\
+a is replaced by Link\
+Link just make hyperlink and NavLink give chance to add classes on it.\
+activeClassName = \'93classname u want to add for active tag\'94\
+Or \
+<NavLink activeStle=\{\{color:\'92orange\'92\}\} to=\'93./da./das\'94>click</NavLink>\
+\
+\
+On clicking any link it goes to Route which then send us to component\
+\
+\
+Const Home=(props)=> <div><h1>Home</h1></div> \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 Const About=(props)=> <div><h1>About \{props.match.params.name\}</h1></div> \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+<Router>\
+\
+<Link to=\'93/\'93>Home </Link>\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 <Link to=\'93/about/mukul/coder/123\'93>Home </Link>\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 <Route exact path=\'93/\'93 component=\{Home\}/>\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 <Route exact path=\'93/about/:name/:job/:address?\'94  component=\{About\}/>\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0  :address? Is optional. \'91?\'92 denotes that it is optional\
+\
+To use this params we need to get it through \{props.match.params.name\} etc.\
+\
+//exact takes care that same things in start\
+//strict checks that required content is ending with \'91/\'92\
+\
+\
+\
+To get query string parameter\
+\
+/hom?name=mukul&city=delhi\
+\
+props.location.params.name\
+\
+\
+\
+Home/electronics/mobile/samsung these are called path parameters\
+\
+\
+\{New URLSearchParams(props.location.search).get(\'91keyName\'92)\}\
+\
+}
